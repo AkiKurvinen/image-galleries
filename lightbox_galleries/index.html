@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="dist/css/lightbox.css" rel="stylesheet" />
+
+</head>
+<body>
+   <h1>Lightbox 2 image galleries</h1>
+     <i>Source: <a href="https://lokeshdhakar.com/projects/lightbox2/" target="_blank">Lokesh Dhakar / lightbox2</a></i>
+   <h2>Just images & lightbox</h2>
+
+    <section id="lightbox_gallery">
+ <a href="http://lokeshdhakar.com/projects/lightbox2/images/image-3.jpg" data-lightbox="example-set-1" data-title="Click the right half of the image to move forward.">
+     <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-3.jpg" alt=""/></a>
+ <a href="http://lokeshdhakar.com/projects/lightbox2/images/image-4.jpg" data-lightbox="example-set-1" data-title="Or press the right arrow on your keyboard.">
+     <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-4.jpg" alt="" /></a>
+ <a href="http://lokeshdhakar.com/projects/lightbox2/images/image-5.jpg" data-lightbox="example-set-1" data-title="The next image in the set is preloaded as you're viewing.">
+     <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-5.jpg" alt="" /></a>
+ <a href="http://lokeshdhakar.com/projects/lightbox2/images/image-6.jpg" data-lightbox="example-set-1" data-title="Click anywhere outside the image or the X to the right to close.">
+     <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-6.jpg" alt="" /></a>
+ <a href="http://lokeshdhakar.com/projects/lightbox2/images/image-3.jpg" data-lightbox="example-set-1" data-title="Click the right half of the image to move forward.">
+     <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-3.jpg" alt=""/></a>
+ <a href="http://lokeshdhakar.com/projects/lightbox2/images/image-4.jpg" data-lightbox="example-set-1" data-title="Or press the right arrow on your keyboard.">
+     <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-4.jpg" alt="" /></a>
+ <a href="http://lokeshdhakar.com/projects/lightbox2/images/image-5.jpg" data-lightbox="example-set-1" data-title="The next image in the set is preloaded as you're viewing.">
+     <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-5.jpg" alt="" /></a>
+ <a href="http://lokeshdhakar.com/projects/lightbox2/images/image-6.jpg" data-lightbox="example-set-1" data-title="Click anywhere outside the image or the X to the right to close.">
+     <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-6.jpg" alt="" /></a>
+    </section>
+
+
+    <script>
+    // script for id lightbox_gallery
+       const gallery_images = document.querySelectorAll('#lightbox_gallery > a');
+       for(let x = 0; x < gallery_images.length; x++){
+    var i = new Image();
+    i.src = gallery_images[x].getAttribute('href');
+    i.onload = function () {
+       let size = this.width*200/this.height
+       let elem = gallery_images[x] //.querySelector('img')
+       elem.setAttribute('style', `flex-grow:${size}`)
+       elem = gallery_images[x].querySelector('img')
+       elem.setAttribute('width', `${size}`)
+  };
+       }
+     </script>
+<hr>
+<h2>Images with caption & lightbox</h2>
+
+      <section id="lightbox_text_gallery">
+            <figure><a href="http://lokeshdhakar.com/projects/lightbox2/images/image-3.jpg" data-lightbox="example-set-2" data-title="Title is defined, else use figcaption">
+                <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-3.jpg" alt=""/></a> <figcaption>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</figcaption>
+            </figure>
+            <figure><a href="http://lokeshdhakar.com/projects/lightbox2/images/image-4.jpg" data-lightbox="example-set-2" data-title="">
+                <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-4.jpg" alt="" /></a> <figcaption>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</figcaption>
+            </figure>
+            <figure><a href="http://lokeshdhakar.com/projects/lightbox2/images/image-5.jpg" data-lightbox="example-set-2" data-title="">
+                <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-5.jpg" alt="" /></a> <figcaption>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</figcaption>
+            </figure>
+            <figure><a href="http://lokeshdhakar.com/projects/lightbox2/images/image-6.jpg" data-lightbox="example-set-2" data-title="">
+                <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-6.jpg" alt="" /></a> <figcaption>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</figcaption>
+            </figure>
+            <figure><a href="http://lokeshdhakar.com/projects/lightbox2/images/image-3.jpg" data-lightbox="example-set-2" data-title="">
+                <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-3.jpg" alt=""/></a> <figcaption>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</figcaption>
+            </figure>
+            <figure><a href="http://lokeshdhakar.com/projects/lightbox2/images/image-4.jpg" data-lightbox="example-set-2" data-title="">
+                <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-4.jpg" alt="" /></a> <figcaption>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</figcaption>
+            </figure>
+            <figure><a href="http://lokeshdhakar.com/projects/lightbox2/images/image-5.jpg" data-lightbox="example-set-2" data-title="">
+                <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-5.jpg" alt="" /></a> <figcaption>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</figcaption>
+            </figure>
+            <figure><a href="http://lokeshdhakar.com/projects/lightbox2/images/image-6.jpg" data-lightbox="example-set-2" data-title="">
+                <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-6.jpg" alt="" /></a> <figcaption>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</figcaption>
+            </figure>
+      </section>
+
+      <script>
+        // script for id lightbox_text_gallery
+        const figure_elements = document.querySelectorAll('#lightbox_text_gallery > figure');
+        for(let x = 0; x < figure_elements.length; x++){
+            var i = new Image();
+            let img_elem = figure_elements[x].querySelector("img")
+            i.src = img_elem.getAttribute('src');
+            i.onload = function () {
+                figure_elements[x].setAttribute('style', `width:${this.width*200/this.height}px;flex-grow:${this.width*200/this.height}`)
+        };
+        }
+      </script>
+
+      <script>
+        // set data-title to same as figcaption
+        // or define data-title in html
+        const lightbox_elements = document.querySelectorAll('#lightbox_text_gallery > figure');
+
+        for (const element of lightbox_elements) {
+
+            let a_lement = element.querySelector('a')
+            let figcaption_text = element.querySelector('figcaption')
+
+            if(a_lement.getAttribute('data-title') == ""){
+                a_lement.setAttribute('data-title', figcaption_text.textContent)
+            }
+        }
+      </script>
+
+
+<script src="dist/js/lightbox-plus-jquery.js"></script>
+<script>
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true
+    })
+</script>
+
+</body>
+
+</html>

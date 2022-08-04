@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8">
+    <title>Flex PhotoSwipe Gallery</title>
+
+    <script src="photoswipe.js"></script>
+    <link rel="stylesheet" href="photoswipe.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background-color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: #222;
+        gap: 15px;
+      }
+
+      #gallery figure {
+        display: flex;
+        flex-direction: column;
+        width: min-content;
+        margin: 0;
+      }
+
+      #gallery figure a img {
+        max-height: 300px;
+        object-fit: contain;
+        max-width: 90vw;
+      }
+
+      figcaption {
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: left;
+        max-width: 100vw;
+        padding-top: 0.5em;
+        padding-bottom: 1em;
+      }
+      .pswp--open {
+        position: fixed;
+      }
+      .pswp__caption__center {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin-bottom: 4em;
+      }
+
+      @media screen and (max-width: 800px) {
+        #gallery a img {
+          max-height: 90vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="gallery" class="my-simple-gallery">
+      <figure>
+        <a href="buildings.jpg">
+          <img src="buildings.jpg" alt="Image description" />
+        </a>
+        <figcaption>Image caption 1</figcaption>
+      </figure>
+
+      <figure>
+        <a href="mountain.jpg">
+          <img src="mountain.jpg" alt="Image description" />
+        </a>
+        <figcaption>Image caption 2</figcaption>
+      </figure>
+
+      <figure>
+        <a href="cabinet.jpg">
+          <img src="cabinet.jpg" alt="Image description" />
+        </a>
+        <figcaption>Image caption 3</figcaption>
+      </figure>
+
+      <figure>
+        <a href="buildings.jpg">
+          <img src="buildings.jpg" alt="Image description" />
+        </a>
+        <figcaption>Image caption 4</figcaption>
+      </figure>
+
+      <figure>
+        <a href="mountain.jpg">
+          <img src="mountain.jpg" alt="Image description" />
+        </a>
+        <figcaption>Image caption 5</figcaption>
+      </figure>
+
+      <figure>
+        <a href="cabinet.jpg">
+          <img src="cabinet.jpg" alt="Image description" />
+        </a>
+        <figcaption>Image caption 6</figcaption>
+      </figure>
+
+      <figure>
+        <a href="buildings.jpg">
+          <img src="buildings.jpg" alt="Image description" />
+        </a>
+        <figcaption>Image caption 7</figcaption>
+      </figure>
+
+      <figure>
+        <a href="mountain.jpg">
+          <img src="mountain.jpg" alt="Image description" />
+        </a>
+        <figcaption>Image caption 8</figcaption>
+      </figure>
+
+
+      <figure>
+        <a href="cabinet.jpg">
+          <img src="cabinet.jpg" alt="Image description" />
+        </a>
+        <figcaption>Image caption 9</figcaption>
+      </figure>
+    </div>
+
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <!-- Background of PhotoSwipe.
+   It's a separate element, as animating opacity is faster than rgba(). -->
+      <div class="pswp__bg"></div>
+
+      <!-- Slides wrapper with overflow:hidden. -->
+      <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <!--  Controls are self-explanatory. Order can be changed. -->
+
+            <div class="pswp__counter"></div>
+
+            <button
+              class="pswp__button pswp__button--close"
+              title="Close (Esc)"
+            ></button>
+
+            <button
+              class="pswp__button pswp__button--share"
+              title="Share"
+            ></button>
+
+            <button
+              class="pswp__button pswp__button--fs"
+              title="Toggle fullscreen"
+            ></button>
+
+            <button
+              class="pswp__button pswp__button--zoom"
+              title="Zoom in/out"
+            ></button>
+
+            <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+            <!-- element will get class pswp__preloader--active when preloader is running -->
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"
+          >
+            <div class="pswp__share-tooltip"></div>
+          </div>
+
+          <button
+            class="pswp__button pswp__button--arrow--left"
+            title="Previous (arrow left)"
+          ></button>
+
+          <button
+            class="pswp__button pswp__button--arrow--right"
+            title="Next (arrow right)"
+          ></button>
+
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const gallery_images = document.querySelectorAll('#gallery > figure > a');
+
+      for (const element of gallery_images) {
+        var i = new Image();
+        i.src = element.getAttribute('href');
+        i.onload = function () {
+          console.log(`${this.width}x${this.height}`);
+          element.setAttribute('data-size', `${this.width}x${this.height}`);
+        };
+      }
+
+      // execute PhotoSwipe function
+      initPhotoSwipeFromDOM('.my-simple-gallery');
+    </script>
+  </body>
+</html>

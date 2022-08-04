@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+	<title>photoswipe gallery</title>
+    <script src="photoswipe.js"></script>
+    <script src="gallery_ui.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<h1>PhotoSwipe galleries</h1>
+<i>Source: <a href="https://photoswipe.com/" target="_blank">Dmytro Semenov / PhotoSwipe</a></i>
+<h2>Inline PhotoSwipe gallery example</h2>
+
+
+<div class="gallery-container" id="photoswipe_no_text">
+
+  <div class="my-simple-gallery" >
+
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" data-size="">
+          <img src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg" alt="Image description" />
+      </a>
+      <figcaption itemprop="caption description">Image 1</figcaption>
+    </figure>
+
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg" data-size="">
+          <img src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg" alt="Image description" />
+      </a>
+      <figcaption itemprop="caption description">Image caption 2</figcaption>
+    </figure>
+
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg" data-size="">
+          <img src="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_m.jpg" alt="Image description" />
+      </a>
+      <figcaption itemprop="caption description">Image caption 3</figcaption>
+    </figure>
+
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_b.jpg" data-size="">
+          <img src="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_m.jpg" alt="Image description" />
+      </a>
+      <figcaption itemprop="caption description">Image caption 4</figcaption>
+    </figure>
+
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" data-size="">
+          <img src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg" alt="Image description" />
+      </a>
+      <figcaption itemprop="caption description">Image 5</figcaption>
+    </figure>
+
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg" data-size="">
+          <img src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg" alt="Image description" />
+      </a>
+      <figcaption itemprop="caption description">Image caption 6</figcaption>
+    </figure>
+
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg" data-size="">
+          <img src="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_m.jpg" alt="Image description" />
+      </a>
+      <figcaption itemprop="caption description">Image caption 7</figcaption>
+    </figure>
+
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_b.jpg" data-size="">
+          <img src="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_m.jpg" alt="Image description" />
+      </a>
+      <figcaption itemprop="caption description">Image caption 8</figcaption>
+    </figure>
+
+
+  </div>
+</div>
+
+
+  <script>
+    // init gallery plugin
+    document.getElementById('photoswipe_no_text').innerHTML += render_gallery_ui()
+    initPhotoSwipeFromDOM('#photoswipe_no_text > .my-simple-gallery');
+  </script>
+
+  <script>
+    // script for id photoswipe_no_text
+       const figure_elements = document.querySelectorAll('#photoswipe_no_text > .my-simple-gallery > figure');
+       for(let x = 0; x < figure_elements.length; x++){
+            var i = new Image();
+            let img_elem = figure_elements[x].querySelector("a")
+            i.src = img_elem.getAttribute('href');
+            i.onload = function () {
+                figure_elements[x].setAttribute('style', `width:${this.width*200/this.height}px;flex-grow:${this.width*200/this.height}`)
+                img_elem.setAttribute('data-size', `${this.width}x${this.height}`);
+            };
+        }
+      </script>
+
+  <!-- Gallery with captions -->
+  <hr>
+  <h2>Gallery with captions</h2>
+  <div class="gallery-container" id="photoswipe_with_text">
+
+    <div class="my-simple-gallery" >
+
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" data-size="">
+            <img src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg" alt="Image description" />
+        </a>
+        <figcaption itemprop="caption description">Image 1</figcaption>
+      </figure>
+
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg" data-size="">
+            <img src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg" alt="Image description" />
+        </a>
+        <figcaption itemprop="caption description">Image caption 2</figcaption>
+      </figure>
+
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg" data-size="">
+            <img src="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_m.jpg" alt="Image description" />
+        </a>
+        <figcaption itemprop="caption description">Image caption 3</figcaption>
+      </figure>
+
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_b.jpg" data-size="">
+            <img src="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_m.jpg" alt="Image description" />
+        </a>
+        <figcaption itemprop="caption description">Image caption 4</figcaption>
+      </figure>
+
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" data-size="">
+            <img src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg" alt="Image description" />
+        </a>
+        <figcaption itemprop="caption description">Image 5</figcaption>
+      </figure>
+
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg" data-size="">
+            <img src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg" alt="Image description" />
+        </a>
+        <figcaption itemprop="caption description">Image caption 6 is very long and might not even contain useful information about the picture</figcaption>
+      </figure>
+
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg" data-size="">
+            <img src="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_m.jpg" alt="Image description" />
+        </a>
+        <figcaption itemprop="caption description">Image caption 7</figcaption>
+      </figure>
+
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_b.jpg" data-size="">
+            <img src="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_m.jpg" alt="Image description" />
+        </a>
+        <figcaption itemprop="caption description">Image caption 8</figcaption>
+      </figure>
+
+    </div>
+  </div>
+
+  <script>
+    // init gallery plugin
+    document.getElementById('photoswipe_with_text').innerHTML += render_gallery_ui()
+    initPhotoSwipeFromDOM('#photoswipe_with_text > .my-simple-gallery');
+  </script>
+
+  <script>
+    // script for id photoswipe_with_text
+       const figure_elements_2 = document.querySelectorAll('#photoswipe_with_text > .my-simple-gallery > figure');
+       for(let x = 0; x < figure_elements_2.length; x++){
+            var i = new Image();
+            let img_elem = figure_elements_2[x].querySelector("a")
+            i.src = img_elem.getAttribute('href');
+            i.onload = function () {
+              figure_elements_2[x].setAttribute('style', `width:${this.width*200/this.height}px;flex-grow:${this.width*200/this.height}`)
+                img_elem.setAttribute('data-size', `${this.width}x${this.height}`);
+            };
+        }
+      </script>
+
+
+</body>
+</html>

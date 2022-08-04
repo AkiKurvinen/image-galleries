@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <h1>Imgae galleries</h1>
+   <h2>Just images</h2>
+   <i>Source: <a href="https://github.com/xieranmaya/blog/issues/6" target="_blank">xieranmaya / github.com</a></i><br><br>
+    <section id="image_gallery">     
+			<img src="https://images.unsplash.com/photo-1438072946296-614a6687ea20?dpr=1&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb">
+			<img src="https://images.unsplash.com/photo-1470020337050-543c4e581988?dpr=1&auto=compress,format&fit=crop&w=991&h=661&q=80&cs=tinysrgb">
+			<img src="https://images.unsplash.com/photo-1470138831303-3e77dd49163e?dpr=1&auto=compress,format&fit=crop&w=376&h=251&q=80&cs=tinysrgb">
+			<img src="https://images.unsplash.com/photo-1484248970913-02d5ad63477f?dpr=1&auto=compress,format&fit=crop&w=376&h=251&q=80&cs=tinysrgb">
+			<img src="https://images.unsplash.com/photo-1489060887344-f3a2c715dbe5?dpr=1&auto=compress,format&fit=crop&w=568&h=393&q=80&cs=tinysrgb">
+			<img src="https://images.unsplash.com/photo-1489058535093-8f530d789c3b?dpr=1&auto=compress,format&fit=crop&w=568&h=379&q=80&cs=tinysrgb">
+			<img src="https://images.unsplash.com/photo-1489041763408-10ac51c35969?dpr=1&auto=compress,format&fit=crop&w=568&h=379&q=80&cs=tinysrgb">
+			<img src="https://images.unsplash.com/photo-1489013781457-bc56c53d0374?dpr=1&auto=compress,format&fit=crop&w=568&h=320&q=80&cs=tinysrgb">	
+			<img src="https://images.unsplash.com/photo-1488998155149-381d94d28869?dpr=1&auto=compress,format&fit=crop&w=568&h=379&q=80&cs=tinysrgb">
+      </section>
+
+<hr>
+<h2>Images with caption </h2>
+
+      <section id="image_text_gallery">    
+         
+			<figure><img src="https://images.unsplash.com/photo-1438072946296-614a6687ea20?dpr=1&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb">
+            <figcaption>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</figcaption>
+         </figure> 
+			<figure><img src="https://images.unsplash.com/photo-1470020337050-543c4e581988?dpr=1&auto=compress,format&fit=crop&w=991&h=661&q=80&cs=tinysrgb">
+            <figcaption>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</figcaption></figure>
+			<figure><img src="https://images.unsplash.com/photo-1470138831303-3e77dd49163e?dpr=1&auto=compress,format&fit=crop&w=376&h=251&q=80&cs=tinysrgb">
+            <figcaption>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</figcaption></figure>
+			<figure><img src="https://images.unsplash.com/photo-1484248970913-02d5ad63477f?dpr=1&auto=compress,format&fit=crop&w=376&h=251&q=80&cs=tinysrgb">
+            <figcaption>Sed ut perspiciatis unde omnis iste natus error</figcaption></figure>
+			<figure><img src="https://images.unsplash.com/photo-1489060887344-f3a2c715dbe5?dpr=1&auto=compress,format&fit=crop&w=568&h=393&q=80&cs=tinysrgb">
+            <figcaption>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</figcaption></figure>
+			<figure><img src="https://images.unsplash.com/photo-1489058535093-8f530d789c3b?dpr=1&auto=compress,format&fit=crop&w=568&h=379&q=80&cs=tinysrgb">
+            <figcaption>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</figcaption></figure>
+			<figure><img src="https://images.unsplash.com/photo-1489041763408-10ac51c35969?dpr=1&auto=compress,format&fit=crop&w=568&h=379&q=80&cs=tinysrgb">
+            <figcaption>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</figcaption></figure>
+			<figure><img src="https://images.unsplash.com/photo-1489013781457-bc56c53d0374?dpr=1&auto=compress,format&fit=crop&w=568&h=320&q=80&cs=tinysrgb">	
+            <figcaption>Sed ut perspiciatis</figcaption></figure>
+			<figure><img src="https://images.unsplash.com/photo-1488998155149-381d94d28869?dpr=1&auto=compress,format&fit=crop&w=568&h=379&q=80&cs=tinysrgb">
+            <figcaption>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</figcaption></figure>
+      </section>
+
+
+      <script>
+         // script for id image_gallery
+        const gallery_images = document.querySelectorAll('#image_gallery > img');
+        for(let x = 0; x < gallery_images.length; x++){
+            var i = new Image();
+            i.src = gallery_images[x].getAttribute('src');
+            i.onload = function () {
+               gallery_images[x].setAttribute('style', `flex-grow:${this.width*200/this.height}`)
+               gallery_images[x].setAttribute('width', `${this.width*200/this.height}`)
+          };
+        }
+      </script>
+
+      <script>
+         // script for id image_text_gallery
+         const figure_elements = document.querySelectorAll('#image_text_gallery > figure');
+         for(let x = 0; x < figure_elements.length; x++){
+            var i = new Image();
+            let img_elem = figure_elements[x].querySelector("img")
+            i.src = img_elem.getAttribute('src');
+            i.onload = function () {
+               figure_elements[x].setAttribute('style', `width:${this.width*200/this.height}px;flex-grow:${this.width*200/this.height}`)
+         };
+         }
+      </script>
+
+
+</body>
+
+</html>
