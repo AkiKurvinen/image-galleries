@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Semi Auto Image Gallery</title>
+	<script src="make_gallery.js"></script>
+  <link rel="stylesheet" href="style_gallery.css">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <h1>Semi Auto Image Gallery</h1>
+
+	<div id="gallery">
+    <!-- Gallery will be generated here -->
+  </div>
+
+  <script>
+    images = ['buildings.jpg', 'cabinet.jpg', 'city_panorama.jpg',
+              'cabinet.jpg', 'mountain.jpg', 'window-on-wall.jpg',
+              'cabinet.jpg', 'mountain.jpg', 'buildings.jpg']
+            
+    // (gallery_div_id, image_folder, image_file_names)
+    make_gallery('gallery', 'images', images)
+  </script>
+
+<h2>Usage</h2>
+<xmp>
+<head>
+   <script src="make_gallery.js"></script>
+   <link rel="stylesheet" href="style_gallery.css">
+</head>
+<body>
+  <div id="gallery">
+    <!-- Gallery will be generated here -->
+  </div>
+
+  <script>
+    images = ['buildings.jpg', 'cabinet.jpg', 'city_panorama.jpg',
+              'cabinet.jpg', 'mountain.jpg', 'window-on-wall.jpg',
+              'cabinet.jpg', 'mountain.jpg', 'buildings.jpg']
+
+    // (gallery_div_id, image_folder, image_file_names)
+    make_gallery('gallery', 'images', images)
+  </script>
+</body>
+
+</xmp>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+h1{
+    text-align: center;
+}
+.slick-slide {
+  margin: 0px 20px;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+.slick-slide {
+  transition: all ease-in-out .3s;
+  opacity: .1;
+}
+
+.slick-active {
+  opacity: .5;
+}
+
+.slick-current {
+  opacity: 1;
+}
+
+/* Edit slick styles */
+
+.slick-slide {
+    max-height:400px;
+}
+
+.slick-slide img {
+    max-height:400px;
+    object-fit: contain;
+}
+.image-gallery{
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    position: relative;
+}
+
+.slick-slide.c {
+    display: inline-block;
+    vertical-align: middle;
+    float:none;
+}
+.slick-prev:before, .slick-next:before{
+    color: white;
+}
+
+.slick-track{
+    display: flex;
+    align-items: center;
+}
+.slick-dots li button:before {
+    color: white;
+    opacity: 1;
+}
+.slick-dots li.slick-active button::before {
+    color: white;
+    opacity: 0.5;
+}
+.slider {
+    width: 60%;
+    margin: 1em auto;
+}
+.slick-prev{
+    left: -50px;
+ 
+}
+.slick-next{
+    right: -50px;
+
+}
+
+@media only screen and (max-width: 1000px) {
+    .image-gallery,.slick-slide{
+        max-height:100vh;
+    }
+    .slick-slide img{
+        max-width: 90vw;
+        max-height:90vh;
+    }
+    .slider {
+        width: 90%;
+    }
+    .slick-arrow{
+     z-index: 999;
+    }
+    .slick-prev:before, .slick-next:before{
+        position:absolute;
+        top:30vh;
+        z-index: 9999;
+        font-size: 50px;
+    }
+    .slick-prev{
+        left: 0;
+    }
+    .slick-next{
+        right: 50px;
+    } 
+}
