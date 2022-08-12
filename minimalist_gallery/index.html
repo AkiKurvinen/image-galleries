@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalistic Galleries</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Uniform img aspect ratio</h2>
+    <div class="uniform_gallery">
+        <img src="img/bird.jpg" alt="bird">
+        <img src="img/wind.jpg" alt="wind">
+        <img src="img/jellyfish.jpg" alt="jellyfish">
+        <img src="img/mountain.jpg" alt="mountain">
+        <img src="img/fish.jpg" alt="fish">
+        <img src="img/facepalm.jpg" alt="facepalm">
+    </div>
+
+    <h2>Variating img aspect ratio</h2>
+    <div class="mixed_gallery">
+        <img src="img/bird.jpg" alt="bird">
+        <img src="img/wind.jpg" alt="wind">
+        <img src="img/houseplant.jpg" alt="houseplant">
+        <img src="img/mountain.jpg" alt="mountain">
+        <img src="img/fish.jpg" alt="fish">
+        <img src="img/facepalm.jpg" alt="facepalm">
+    </div>
+
+    <script>
+        // Fit images on row
+        const img_elements = document.querySelectorAll('.mixed_gallery img');
+        for(let x = 0; x < (img_elements.length-1); x++){
+
+            let img = new Image();
+            let img_elem = img_elements[x]
+            img.src = img_elem.getAttribute('src');
+            img.onload = function () {
+                img_elements[x].setAttribute('style',
+                    `width:${this.width*200/this.height}px;
+                    flex-grow:${this.width*200/this.height}`)
+            };
+        }
+
+    </script>
+
+</body>
+</html>

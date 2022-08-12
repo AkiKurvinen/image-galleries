@@ -1,0 +1,37 @@
+/* Unnecessary styles */
+body{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background-color: #222;
+    color: white;
+    margin: 0 0 2em 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2{
+    margin: 2em 0 1em 0;
+}
+
+/* Uniform img aspect ratio */
+.uniform_gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1000px;
+    gap: 15px;
+}
+.uniform_gallery img{
+   max-width: 100%;
+}
+
+/* Variating img aspect ratio */
+.mixed_gallery {
+    padding-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 1000px;
+}
+.mixed_gallery img:last-child{
+    max-height: 214px;
+}
