@@ -17,33 +17,52 @@
         <img src="img/fish.jpg" alt="fish">
         <img src="img/facepalm.jpg" alt="facepalm">
     </div>
-
-    <h2>Variating img aspect ratio</h2>
-    <div class="mixed_gallery">
+<h2>Usage</h2>
+<xmp>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Uniform img aspect ratio</h2>
+    <div class="uniform_gallery">
         <img src="img/bird.jpg" alt="bird">
         <img src="img/wind.jpg" alt="wind">
-        <img src="img/houseplant.jpg" alt="houseplant">
+        <img src="img/jellyfish.jpg" alt="jellyfish">
         <img src="img/mountain.jpg" alt="mountain">
         <img src="img/fish.jpg" alt="fish">
         <img src="img/facepalm.jpg" alt="facepalm">
     </div>
+</body>
+</html>
 
-    <script>
-        // Fit images on row
-        const img_elements = document.querySelectorAll('.mixed_gallery img');
-        for(let x = 0; x < (img_elements.length-1); x++){
+</xmp>
+<xmp>
+/* style.css */
+.uniform_gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1000px;
+    gap: 15px;
+}
 
-            let img = new Image();
-            let img_elem = img_elements[x]
-            img.src = img_elem.getAttribute('src');
-            img.onload = function () {
-                img_elements[x].setAttribute('style',
-                    `width:${this.width*200/this.height}px;
-                    flex-grow:${this.width*200/this.height}`)
-            };
-        }
+.uniform_gallery img{
+   max-width: 100%;
+}
 
-    </script>
+@media only screen and (max-width: 900px) {
+    .uniform_gallery{
+        grid-template-columns: 1fr 1fr;
+    }
+}
 
+@media only screen and (max-width: 600px) {
+    .uniform_gallery{
+        grid-template-columns: 1fr;
+    }
+}
+
+</xmp>
 </body>
 </html>

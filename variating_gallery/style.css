@@ -1,0 +1,35 @@
+/* Unnecessary styles */
+body{
+    background-color: #222;
+    color: white;
+    margin: 0 0 2em 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2{
+    margin: 2em 0 1em 0;
+}
+
+xmp { white-space:pre-wrap;word-wrap:break-word;
+    background-color: antiquewhite;
+    box-sizing: border-box;
+    padding-left: 16px;
+    color: #333;
+    width: 100%;
+}
+/* Variating img aspect ratio */
+.mixed_gallery {
+    padding-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+}
+.mixed_gallery img{
+    width: 100%;
+}
+/* Fill last row empty space */
+.mixed_gallery::after {
+  content: '';
+  flex-grow: 999999999;
+}

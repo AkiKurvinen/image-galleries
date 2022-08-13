@@ -36,6 +36,11 @@
     padding-top: 0.5em;
 	min-height:5em;
 }
+xmp{
+    background-color: antiquewhite;
+    padding-left: 16px;
+    color: #333;
+}
 @media only screen and (max-width: 1400px) {
     #captions_gallery{
         grid-template-columns: repeat(4, auto);
@@ -53,7 +58,7 @@
 }
 @media only screen and (max-width: 500px) {
     #captions_gallery{
-        grid-template-columns: auto;   
+        grid-template-columns: auto;
     }
     #captions_gallery img {
         width: 90%;

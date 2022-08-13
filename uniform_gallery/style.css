@@ -12,7 +12,13 @@ body{
 h2{
     margin: 2em 0 1em 0;
 }
-
+xmp { white-space:pre-wrap;word-wrap:break-word;
+    background-color: antiquewhite;
+    box-sizing: border-box;
+    padding-left: 16px;
+    color: #333;
+    width: 100%;
+}
 /* Uniform img aspect ratio */
 .uniform_gallery{
     display: grid;
@@ -20,18 +26,15 @@ h2{
     max-width: 1000px;
     gap: 15px;
 }
+
 .uniform_gallery img{
    max-width: 100%;
 }
 
-/* Variating img aspect ratio */
-.mixed_gallery {
-    padding-top: 1em;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    max-width: 1000px;
+@media only screen and (max-width: 900px) {
+    .uniform_gallery{grid-template-columns: 1fr 1fr;}
 }
-.mixed_gallery img:last-child{
-    max-height: 214px;
+
+@media only screen and (max-width: 600px) {
+    .uniform_gallery{grid-template-columns: 1fr;}
 }

@@ -19,4 +19,6 @@ h1, h2{
 xmp{
     background-color: antiquewhite;
     padding-left: 16px;
+    color: #333;
+    width: 100%;
 }
