@@ -227,7 +227,6 @@
         var i = new Image();
         i.src = element.getAttribute('href');
         i.onload = function () {
-          console.log(`${this.width}x${this.height}`);
           element.setAttribute('data-size', `${this.width}x${this.height}`);
         };
       }
