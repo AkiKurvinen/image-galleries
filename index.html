@@ -1,74 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-<meta charset="UTF-8">
-<title>Responsive Image Galleries</title>
 
-<link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Image Galleries</title>
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  </head>
-  <body>
-    <h1>Responsive Image Galleries</h1>
-    <i>Collection of galleries and carousels.</i><br>
-    <i>Credits and sources in demo projects.</i><br>
-    <p class="info"> Hover to preview<br>Click link for live demo<br>GitHub logo to repository</p>
+<body>
+  <h1>Responsive Image Galleries</h1>
+  <i>Collection of galleries and carousels.</i><br>
+  <i>Credits and sources in demo projects.</i><br>
+  <p class="info"> Hover to preview<br>Click link for live demo<br>GitHub logo to repository</p>
 
 
-    <h2>Level: Hobby Developer</h2>
-    <p><a href="variating_gallery/">Variating img aspect ratio gallery (Flex & JS)</a></p>
-    <p><a href="uniform_gallery/">Uniform img aspect ratio gallery (Grid & Media Query)</a></p>
-    <p><a href="auto_gallery">Auto generated flex gallery with captions using filenames</a></p>
-    <br>
+  <h2>Level: Hobby Developer</h2>
+  <p><a href="variating_gallery/">Variating img aspect ratio gallery (Flex & JS)</a></p>
+  <p><a href="uniform_gallery/">Uniform img aspect ratio gallery (Grid & Media Query)</a></p>
+  <p><a href="auto_gallery">Auto generated flex gallery with captions using filenames</a></p>
+  <br>
 
-    <h2>Level: Minion Developer</h2>
-    <p><a href="image_cols">Image Grid (W3)</a></p>
-    <p><a href="flex_gallery">Flex gallery & captions</a></p>
-    <p><a href="css_gallery">Grid galleries with and without captions</a></p>
-    <br>
+  <h2>Level: Minion Developer</h2>
+  <p><a href="image_cols">Image Grid (W3)</a></p>
+  <p><a href="flex_gallery">Flex gallery & captions</a></p>
+  <p><a href="css_gallery">Grid galleries with and without captions</a></p>
+  <br>
 
-    <h2>Level: Junior Developer</h2>
-    <p><a href="photoswipe_flex">Flex gallery with captions & PhotoSwipe-lightbox</a></p>
-    <p><a href="css_gallery_with_lightbox">Grid galleries with and without captions & Lightbox2-lightbox</a></p>
-    <br>
+  <h2>Level: Junior Developer</h2>
+  <p><a href="photoswipe_flex">Flex gallery with captions & PhotoSwipe-lightbox</a></p>
+  <p><a href="css_gallery_with_lightbox">Grid galleries with and without captions & Lightbox2-lightbox</a></p>
+  <br>
 
-    <h2>Level: Try-Hard Developer</h2>
-    <p><a href="lightbox_galleries">Row fitting grid galleries with and without captions & Lightbox2-lightbox + Hover FX</a></p>
-    <p><a href="photoswipe_galleries">Row fitting grid galleries with and without captions & PhotoSwipe-lightbox + Epic Zoom Hover FX</a></p>
-    <br>
-    <hr>
-    <h2>Sliders / Carousels</h2>
-    <p><a href="slick_carousel">Slick carousel</a></p>
-    <p><a href="horizontal_carousel">Custom carousel</a></p>
+  <h2>Level: Try-Hard Developer</h2>
+  <p><a href="lightbox_galleries">Row fitting grid galleries with and without captions & Lightbox2-lightbox + Hover FX</a></p>
+  <p><a href="photoswipe_galleries">Row fitting grid galleries with and without captions & PhotoSwipe-lightbox + Epic Zoom Hover FX</a></p>
+  <br>
+  <hr>
+  <h2>Sliders / Carousels</h2>
+  <p><a href="slick_carousel">Slick carousel</a></p>
+  <p><a href="horizontal_carousel">Custom carousel</a></p>
 
-    <br>
-    <hr>
-    <h2>Grid of Quotes</h2>
-    <p><a href="quotes_gallery" class="trig">Grid & Flex gallery of quotes</a></p>
+  <br>
+  <hr>
+  <h2>Grid of Quotes</h2>
+  <p><a href="quotes_gallery" class="trig">Grid & Flex gallery of quotes</a></p>
 
-    <br>
-    <br>
+  <br>
+  <br>
 
-    <script>
-        const a_elements = document.querySelectorAll('p  a');
-        for(let x = 0; x < (a_elements.length); x++){
-          a_elements[x].setAttribute("id", `trig${x}`)
-          a_elements[x].setAttribute("class", `trig`)
-          let link = a_elements[x].getAttribute("href")
+  <script>
+    const a_elements = document.querySelectorAll('p  a');
+    for (let x = 0; x < (a_elements.length); x++) {
+      a_elements[x].setAttribute("id", `trig${x}`)
+      a_elements[x].setAttribute("class", `trig`)
+      let link = a_elements[x].getAttribute("href")
 
-          let iframe_elem = `
+      let iframe_elem = `
           <iframe id='ifrm${x}' name='ifrm${x}' class="ifrm" src='${link}/index.html'></iframe>
           `
-          a_elements[x].insertAdjacentHTML('afterend', iframe_elem)
-          github_link =  a_elements[x].getAttribute('href')
-          github_elem = `
+      a_elements[x].insertAdjacentHTML('afterend', iframe_elem)
+      github_link = a_elements[x].getAttribute('href')
+      github_elem = `
             <a href="https://github.com/AkiKurvinen/galleries.github.io/tree/main/${github_link}" target="_bank" title="Show on GitHub">
             <img src="github-logo.svg" alt="GitHub logo" class="githublink"></a>
             `
-          a_elements[x].insertAdjacentHTML('beforebegin', github_elem)
+      a_elements[x].insertAdjacentHTML('beforebegin', github_elem)
 
-        }
-    </script>
+    }
+  </script>
 
 
-  </body>
+</body>
+
 </html>
